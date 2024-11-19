@@ -76,6 +76,15 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 ![precision_recall_curve](assets/images/precision_recall_curve.png)
 <i>Figure 3. Precision recall curves.</i>
 
+| Metric            | Model       | AMD   | DME   | ERM   | NO    | RAO    | RVO   | VID   |
+|-------------------|-------------|-------|-------|-------|-------|--------|-------|-------|
+| AUC               | enetv2m     | 0.9936| 0.9853| 0.9933| 0.994 | 1.0000 | 0.9711| 1.0000|
+|                   | enetv2m_cw  | 0.9898| 0.9768| 0.9935| 0.9945| 1.0000 | 0.9561| 0.9997|
+| Average Precision | enetv2m     | 0.9960| 0.8406| 0.9592| 0.9659| 1.0000 | 0.7337| 1.0000|
+|                   | enetv2m_cw  | 0.9938| 0.8321| 0.9706| 0.9704| 1.0000 | 0.6928| 0.9931|
+
+<i>Table 1. AUC values and aberage precision (AP) values of each class in the dataset.</i>
+
 ![confusion_matrix](assets/images/confusion_matrix.png)
 <i>Figure 4. Confusion matrix.</i>
 
