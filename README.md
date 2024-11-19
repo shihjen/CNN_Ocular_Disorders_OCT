@@ -12,7 +12,23 @@
 ---
 
 ```
-
+CNN_Ocular_Disorders_OCT/
+├── data/
+│   ├── oct_test.csv
+│   └── oct_train.csv
+│   └── oct_val.csv
+|   └── OCTDL_labels.csv
+├── learning_history/
+|   ├── oct_enetv2m_sp_151124.csv
+|   └── oct_enetv2m_sp_cw_151124.csv
+├── notebooks/
+|   ├── OCT_Data Splitting.ipynb
+|   └── OCT_EfficientNetV2M_SP_151124.ipynb
+|   └── OCT_EfficientNetV2M_SP_CW_151124.ipynb
+|   └── OCT_ModelComparison.ipynb
+├── models.md
+├── README.md
+└── requirements.txt
 ```
 
 ### Background
@@ -47,15 +63,24 @@ For model development, data splitting was performed following the methodology ou
 ---
 
 <p>
-All images were rescaled to a pixel intensity range of 0 to 1 to normalize the input data. To enhance the diversity of the training dataset and prevent overfitting, data augmentation techniques were applied. The augmentation strategies included random rotations up to 0.3 radians, width and height shifts of up to 10%, zoom adjustments within a 0.1 range, as well as horizontal and vertical flips. These techniques were implemented to improve the model’s ability to generalize across variations in the input data.
+All images were rescaled to a pixel intensity range of 0 to 1 to normalize the input data. To enhance the diversity of the training dataset and prevent overfitting, data augmentation techniques were applied. The augmentation strategies included random rotations up to 0.2 radians, width and height shifts of up to 10%, zoom adjustments within a 0.2 range, as well as horizontal and vertical flips. These techniques were implemented to improve the model’s ability to generalize across variations in the input data.
 </p>
 
 
 ### Results
 ---
 
+![roc_curve](assets/images/roc_curve.png)
+<i>Figure 2. Receiver Operating Characteristic (ROC) curves.</i>
+
+![precision_recall_curve](assets/images/precision_recall_curve.png)
+<i>Figure 3. Precision recall curves.</i>
+
 ![confusion_matrix](assets/images/confusion_matrix.png)
-<i>Figure . Confusion matrix.</i>
+<i>Figure 4. Confusion matrix.</i>
+
+![error_analysis](assets/images/error_analysis.png)
+<i>Figure 5. Images failed to classify by both models</i>
 
 
 ### References
