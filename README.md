@@ -86,10 +86,20 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 <i>Table 1. AUC values and aberage precision (AP) values of each class in the dataset.</i>
 
 ![confusion_matrix](assets/images/confusion_matrix.png)
-<i>Figure 4. Confusion matrix.</i>
+<i>Figure 4. Confusion matrices of models fine-tuned using EfficientNetv2 architecture with and without class weight adjusted, trained on OCTDL dataset.</i>
 
 ![error_analysis](assets/images/error_analysis.png)
 <i>Figure 5. Images failed to classify by both models</i>
+
+### Future Directions
+---
+
+1. **Addressing Class Imbalance.** It is suggested that additional techniques such as oversampling and undersampling be applied to enhance the model's ability to generalize and improve overall performance. These methods may help mitigate the effects of class imbalance in the dataset, leading to more robust predictions across all classes.
+
+2. **Exploring Different Network Architectures.** Investigating the use of pre-trained Vision Transformer (ViT) models could be beneficial for assessing their performance, particularly concerning minority classes. Given their unique architecture and attention mechanisms, ViTs may offer improved feature extraction and classification capabilities compared to traditional CNNs.
+
+3. **Image Enhancement Techniques.** Recent work by Elkholy et al. (2024) indicates that image enhancement techniques—including brightness and contrast adjustments, as well as smoothing methods to reduce blur and noise—can significantly improve model performance. Their findings suggest that these enhancements achieved accuracy levels surpassing those reported in previous literature using the Kermany OCT dataset. Exploring similar image enhancement strategies may provide valuable insights for future research.
+
 
 
 ### References
@@ -100,6 +110,7 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 3. [Amoaku, W. M., Ghanchi, F., Bailey, C., Banerjee, S., Banerjee, S., Downey, L., Gale, R., Hamilton, R., Khunti, K., Posner, E., Quhill, F., Robinson, S., Setty, R., Sim, D., Varma, D., & Mehta, H. (2020). Diabetic retinopathy and diabetic macular oedema pathways and management: UK Consensus Working Group. Eye (London, England), 34(Suppl 1), 1–51.](https://pubmed.ncbi.nlm.nih.gov/32504038/)
 4. [Flores, R., Carneiro, Â., Tenreiro, S., & Seabra, M. C. (2021). Retinal Progression Biomarkers of Early and Intermediate Age-Related Macular Degeneration. Life (Basel, Switzerland), 12(1), 36.](https://pubmed.ncbi.nlm.nih.gov/35054429/)
 5. https://pmc.ncbi.nlm.nih.gov/articles/PMC11009408/#CR8"></a>
-7. [Kulyabin, M., Zhdanov, A., Nikiforova, A., Stepichev, A., Kuznetsova, A., Ronkin, M., Borisov, V., Bogachev, A., Korotkich, S., Constable, P. A., & Maier, A. (2024). OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods. Scientific data, 11(1), 365.](https://pubmed.ncbi.nlm.nih.gov/37240693/)
-8. [Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification”, Mendeley Data, V2.](https://data.mendeley.com/datasets/rscbjbr9sj/2)
-9. [Yoo, TaeKeun (2020), “Data for: Improved accuracy in OCT diagnosis of rare retinal disease using few-shot learning with generative adversarial networks”, Mendeley Data, V1.](https://data.mendeley.com/datasets/rscbjbr9sj/2)
+6. [Kulyabin, M., Zhdanov, A., Nikiforova, A., Stepichev, A., Kuznetsova, A., Ronkin, M., Borisov, V., Bogachev, A., Korotkich, S., Constable, P. A., & Maier, A. (2024). OCTDL: Optical Coherence Tomography Dataset for Image-Based Deep Learning Methods. Scientific data, 11(1), 365.](https://pubmed.ncbi.nlm.nih.gov/37240693/)
+7. [Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification”, Mendeley Data, V2.](https://data.mendeley.com/datasets/rscbjbr9sj/2)
+8. [Yoo, TaeKeun (2020), “Data for: Improved accuracy in OCT diagnosis of rare retinal disease using few-shot learning with generative adversarial networks”, Mendeley Data, V1.](https://data.mendeley.com/datasets/rscbjbr9sj/2)
+9. [Elkholy, M., & Marzouk, M. A. (2024). Deep learning-based classification of eye diseases using Convolutional Neural Network for OCT images. Frontiers in Computer Science, 5, 1252295.](https://www.frontiersin.org/journals/computer-science/articles/10.3389/fcomp.2023.1252295/full)
