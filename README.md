@@ -54,6 +54,19 @@ The OCTDL dataset utilized in this project is accessible via Mendeley and compri
 <br>
 For model development, data splitting was performed following the methodology outlined by Kulyabin et al. (2024). The dataset was randomly divided into training, validation, and test subsets in a ratio of 70:10:20 at the patient level. This approach ensures that images from a single patient are exclusively allocated to one of the subsets, thereby preventing data leakage and promoting the robustness of the model evaluation. Used data is available at the following link and can be accessed for free: <a href="https://data.mendeley.com/datasets/btv6yrdbmv/1">https://data.mendeley.com/datasets/btv6yrdbmv/1</a>
 
+| Disorder                             | Label | Number of OCT Images | Number of Patients |
+|--------------------------------------|-------|----------------------|--------------------|
+| Age-related Macular Degeneration     | AMD   | 1231                 | 421                |
+| Diabetic Macular Edema               | DME   | 147                  | 107                |
+| Epiretinal Membrane                  | ERM   | 155                  | 71                 |
+| Normal                               | NO    | 332                  | 110                |
+| Retinal Artery Occlusion             | RAO   | 22                   | 11                 |
+| Retinal Vein Occlusion               | RVO   | 101                  | 50                 |
+| Vitreomacular Interface Disease      | VID   | 76                   | 51                 |
+| **Total**                            |       | **2064**             | **821**            |
+<i>Table 1. Class distribution of OCTDL dataset.</i>
+
+
 ![class_distribution](assets/images/OCT_class_dist.png)
 <i>Figure 1. Proportion of each ocular conditions in the dataset.</i>
 
@@ -70,6 +83,10 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 ### Results
 ---
 
+<p>
+Yoo et al. (2020) previously trained their models using two pre-trained architectures, VGG16 and ResNet50, on the OCTDL dataset, achieving a class-wise balanced accuracy of 0.979 across all categories. Given the significant class imbalance present in the dataset, this project aims to leverage class weight adjustment while fine-tuning models with a different architecture. Specifically, two models were fine-tuned using the EfficientNetV2 architecture. Both models were trained from the EfficientNetV2 base, with one model incorporating class weight adjustments during training. In this approach, higher weights were assigned to the minority classes to mitigate the effects of class imbalance.
+</p>
+
 ![roc_curve](assets/images/roc_curve.png)
 <i>Figure 2. Receiver Operating Characteristic (ROC) curves.</i>
 
@@ -83,7 +100,7 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 | Average Precision | enetv2m     | 0.9960| 0.8406| 0.9592| 0.9659| 1.0000 | 0.7337| 1.0000|
 |                   | enetv2m_cw  | 0.9938| 0.8321| 0.9706| 0.9704| 1.0000 | 0.6928| 0.9931|
 
-<i>Table 1. AUC values and aberage precision (AP) values of each class in the dataset.</i>
+<i>Table 2. AUC values and aberage precision (AP) values of each class in the dataset.</i>
 
 ![confusion_matrix](assets/images/confusion_matrix.png)
 <i>Figure 4. Confusion matrices of models fine-tuned using EfficientNetv2 architecture with and without class weight adjusted, trained on OCTDL dataset.</i>
