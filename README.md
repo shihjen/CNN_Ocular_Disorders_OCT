@@ -64,6 +64,7 @@ For model development, data splitting was performed following the methodology ou
 | Retinal Vein Occlusion               | RVO   | 101                  | 50                 |
 | Vitreomacular Interface Disease      | VID   | 76                   | 51                 |
 | **Total**                            |       | **2064**             | **821**            |
+
 <i>Table 1. Class distribution of OCTDL dataset.</i>
 
 
@@ -93,14 +94,24 @@ Yoo et al. (2020) previously trained their models using two pre-trained architec
 ![precision_recall_curve](assets/images/precision_recall_curve.png)
 <i>Figure 3. Precision recall curves.</i>
 
-| Metric            | Model       | AMD   | DME   | ERM   | NO    | RAO    | RVO   | VID   |
-|-------------------|-------------|-------|-------|-------|-------|--------|-------|-------|
-| AUC               | enetv2m     | 0.9936| 0.9853| 0.9933| 0.994 | 1.0000 | 0.9711| 1.0000|
-|                   | enetv2m_cw  | 0.9898| 0.9768| 0.9935| 0.9945| 1.0000 | 0.9561| 0.9997|
-| Average Precision | enetv2m     | 0.9960| 0.8406| 0.9592| 0.9659| 1.0000 | 0.7337| 1.0000|
-|                   | enetv2m_cw  | 0.9938| 0.8321| 0.9706| 0.9704| 1.0000 | 0.6928| 0.9931|
+| Class | Model    | Precision | Recall  | F1-Score | AUC    | Average Precision |
+|-------|----------|-----------|---------|----------|--------|-------------------|
+| AMD   | Model 1  | 0.9705    | 0.9664  | 0.9684   | 0.9936 | 0.9960            |
+|       | Model 2  | 0.9745    | 0.9622  | 0.9683   | 0.9898 | 0.9938            |
+| DME   | Model 1  | 0.6452    | 0.6897  | 0.6667   | 0.9853 | 0.8406            |
+|       | Model 2  | 0.7241    | 0.7241  | 0.7241   | 0.9768 | 0.8321            |
+| ERM   | Model 1  | 0.8286    | 0.9667  | 0.8923   | 0.9933 | 0.9592            |
+|       | Model 2  | 0.7778    | 0.9333  | 0.8485   | 0.9935 | 0.9706            |
+| NO    | Model 1  | 0.8767    | 0.9412  | 0.9078   | 0.9940 | 0.9659            |
+|       | Model 2  | 0.9231    | 0.8824  | 0.9023   | 0.9945 | 0.9704            |
+| RAO   | Model 1  | 1.0000    | 1.0000  | 1.0000   | 1.0000 | 1.0000            |
+|       | Model 2  | 0.7500    | 1.0000  | 0.8571   | 1.0000 | 1.0000            |
+| RVO   | Model 1  | 0.7500    | 0.3913  | 0.5143   | 0.9711 | 0.7337            |
+|       | Model 2  | 0.5789    | 0.4783  | 0.5238   | 0.9561 | 0.6928            |
+| VID   | Model 1  | 0.9375    | 0.9375  | 0.9375   | 1.0000 | 1.0000            |
+|       | Model 2  | 0.8421    | 1.0000  | 0.9143   | 0.9997 | 0.9931            |
 
-<i>Table 2. AUC values and aberage precision (AP) values of each class in the dataset.</i>
+<i>Table 2. Resulting metrics of Model 1 (without class weight adjustment) and Model 2 (with class weight adjustment) on OCTDL dataset.</i>
 
 ![confusion_matrix](assets/images/confusion_matrix.png)
 <i>Figure 4. Confusion matrices of models fine-tuned using EfficientNetv2 architecture with and without class weight adjusted, trained on OCTDL dataset.</i>
@@ -111,7 +122,7 @@ Yoo et al. (2020) previously trained their models using two pre-trained architec
 ### Future Directions
 ---
 
-1. **Addressing Class Imbalance.** It is suggested that additional techniques such as oversampling and undersampling be applied to enhance the model's ability to generalize and improve overall performance. These methods may help mitigate the effects of class imbalance in the dataset, leading to more robust predictions across all classes.
+1. **Addressing Class Imbalance.** Exploring other techniques such as oversampling and undersampling be applied to enhance the model's ability to generalize and improve overall performance. These methods may help mitigate the effects of class imbalance in the dataset, leading to more robust predictions across all classes.
 
 2. **Exploring Different Network Architectures.** Investigating the use of pre-trained Vision Transformer (ViT) models could be beneficial for assessing their performance, particularly concerning minority classes. Given their unique architecture and attention mechanisms, ViTs may offer improved feature extraction and classification capabilities compared to traditional CNNs.
 
