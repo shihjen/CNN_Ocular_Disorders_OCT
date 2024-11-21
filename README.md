@@ -85,7 +85,13 @@ All images were rescaled to a pixel intensity range of 0 to 1 to normalize the i
 ---
 
 <p>
-Yoo et al. (2020) previously trained their models using two pre-trained architectures, VGG16 and ResNet50, on the OCTDL dataset, achieving a class-wise balanced accuracy of 0.979 across all categories. Given the significant class imbalance present in the dataset, this project aims to leverage class weight adjustment while fine-tuning models with a different architecture. Specifically, two models were fine-tuned using the EfficientNetV2 architecture. Both models were trained from the EfficientNetV2 base, with one model incorporating class weight adjustments during training. In this approach, higher weights were assigned to the minority classes to mitigate the effects of class imbalance.
+Yoo et al. (2020) previously trained their models using two pre-trained architectures, VGG16 and ResNet50, on the OCTDL dataset. Given the significant class imbalance in this dataset, this project aimed to leverage class weight adjustment while fine-tuning models with a different architecture. Specifically, two models were fine-tuned using the EfficientNetV2 architecture. Both models were based on the EfficientNetV2 framework, with one model incorporating class weight adjustments during training. In this approach, higher weights were assigned to the minority classes to mitigate the effects of class imbalance. For clarity, the model without class weight adjustment is referred to as Model 1, while the model with class weight adjustment is referred to as Model 2.
+<br>
+<br>
+Model 1 and Model 2 achieved accuracies of 90.91% and 90.42%, respectively, on the test dataset. The primary objective of this project was to investigate whether adjusting class weights could improve model performance in an imbalanced OCT image classification task. Based on the results presented in Table 2, while the application of class weights (Model 2) led to marginal improvements in specific classes, such as Diabetic Macular Edema (DME), it did not result in a consistent overall performance boost. In fact, Model 2 underperformed compared to Model 1 (without class weights) in metrics for most classes, particularly in detecting rare conditions like Retinal Artery Occlusion (RAO) and Vitreomacular Interface Disease (VID). Additionally, Model 2 exhibited decreased Precision and F1-Score in several instances.
+<br>
+<br>
+These findings suggest that while class weight adjustment may help address class imbalance to some extent, it can also introduce trade-offs that negatively affect overall model performance. This highlights the need for more sophisticated strategies to effectively handle imbalanced datasets.
 </p>
 
 ![roc_curve](assets/images/roc_curve.png)
