@@ -116,13 +116,14 @@ Yoo et al. (2020) previously trained their models using two pre-trained architec
 ![confusion_matrix](assets/images/confusion_matrix.png)
 <i>Figure 4. Confusion matrices of models fine-tuned using EfficientNetv2 architecture, Model 1 (without class weight adjusted) and Model 2 (with class weight adjusted), trained on OCTDL dataset.</i>
 
-<p align="center">
-    <img src="assets/images/predcount_model1.png", width="45%">
-    <img src="assets/images/predcount_model2.png", width="45%">
-</p>
+![predstat_model1](assets/images/predcount_model1.png)
+<i>Figure 5. Correct and incorrect predictions for each class by Model 1.</i>
+
+![predstat_model2](assets/images/predcount_model2.png)
+<i>Figure 6. Correct and incorrect predictions for each class by Model 2.</i>
 
 ![error_analysis](assets/images/error_analysis.png)
-<i>Figure 5. Images failed to classify by both models</i>
+<i>Figure 7. Images failed to classify by both models</i>
 
 ### Future Directions
 ---
