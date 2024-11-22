@@ -129,7 +129,7 @@ These findings suggest that while class weight adjustment may help address class
 <i>Figure 6. Correct and incorrect predictions for each class by Model 2.</i>
 
 ![error_analysis](assets/images/error_analysis.png)
-<i>Figure 7. Images failed to classify by both models</i>
+<i>Figure 7. Images failed to classify by both models.</i>
 
 ### Future Directions
 ---
@@ -139,6 +139,8 @@ These findings suggest that while class weight adjustment may help address class
 2. **Exploring Different Network Architectures.** Investigating the use of pre-trained Vision Transformer (ViT) models could be beneficial for assessing their performance, particularly concerning minority classes. Given their unique architecture and attention mechanisms, ViTs may offer improved feature extraction and classification capabilities compared to traditional CNNs.
 
 3. **Image Enhancement Techniques.** Recent work by Elkholy et al. (2024) indicates that image enhancement techniques—including brightness and contrast adjustments, as well as smoothing methods to reduce blur and noise—can significantly improve model performance. Their findings suggest that these enhancements achieved accuracy levels surpassing those reported in previous literature using the Kermany OCT dataset. Exploring similar image enhancement strategies may provide valuable insights for future research.
+
+4. **Combining Image Modalities.** Investigating the integration of multiple imaging modalities, such as OCT and fundus photography, in model training. This approach aims to leverage the complementary strengths of each modality, enhancing feature extraction and providing a more comprehensive understanding of ocular conditions. Models trained with diverse data modalities are likely to exhibit greater diagnostic robustness, effectively mitigating variability associated with individual imaging techniques.
 
 
 
